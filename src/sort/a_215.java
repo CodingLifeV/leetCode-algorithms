@@ -10,7 +10,6 @@ public class a_215 {
             int j = partition(nums, lo, hi);
             if (j == k) {
                 break;
-                //return nums[index];
             } else if (j < k) {
                 lo = j + 1;
             } else {

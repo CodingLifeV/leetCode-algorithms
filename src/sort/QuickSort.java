@@ -23,7 +23,7 @@ public class QuickSort {
                 }
         }*/
         while (true) {
-            while (a[++i].compareTo(re) < 0 && i < hi) ;
+            while (a[++i].compareTo(re) < 0 && i < hi) ;//&&后面代码不能省略
             while (a[--j].compareTo(re) > 0 && j > lo) ;
             if (i >= j) break;
             exch(a, i, j);
