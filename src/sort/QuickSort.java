@@ -33,7 +33,7 @@ public class QuickSort {
     }
     private void exch(Comparable[] a, int i, int j) {
         Comparable temp = a[i];
-        a[j] = a[i];
-        a[i] = temp;
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
