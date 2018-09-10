@@ -6,7 +6,7 @@ public class a_215 {
         //int index = k-1;
         k = nums.length - k;
         int lo = 0, hi = nums.length-1;
-        while (lo <= hi) {
+        while (lo < hi) {//< ,<=则不会通过
             int j = partition(nums, lo, hi);
             if (j == k) {
                 break;
@@ -32,7 +32,7 @@ public class a_215 {
     }
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
-        nums[j] = nums[i];
-        nums[i] = temp;
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
