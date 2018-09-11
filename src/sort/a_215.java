@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.PriorityQueue;
+
 //数组中的第K个最大元素
 public class a_215 {
     public int findKthLargest(int[] nums, int k) {
@@ -34,5 +36,18 @@ public class a_215 {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+}
+
+class StackClass {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        for(int val : nums) {
+            queue.add(val);
+            if (queue.size() > k) {//维护堆的大小为k
+                queue.poll();//每次弹出删除堆中最小元素,最后只剩k个元素
+            }
+        }
+        return queue.peek();
     }
 }

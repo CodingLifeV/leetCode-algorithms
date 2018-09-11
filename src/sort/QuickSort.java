@@ -1,6 +1,11 @@
 package sort;
 
 //快速排序
+
+/**
+ * 快速排序的基本思想是，通过一轮的排序将序列分割成独立的两部分，
+ * 其中一部分序列的关键字（这里主要用值来表示）均比另一部分关键字小
+ */
 public class QuickSort {
     public void sort(Comparable[] a, int lo, int hi) {
         if (lo >= hi) return;
@@ -37,3 +42,6 @@ public class QuickSort {
         a[j] = temp;
     }
 }
+
+
+
