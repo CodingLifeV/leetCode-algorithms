@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 根据身高重建队列(h, k)
- * Arrarlist中的add(int index,Object ojb)方法,
+ * Arrarlist中的add(int index,Object obj)方法,
  * 在list中下标index的位置添加元素obj,下标index及其之后的元素后移
  */
 public class a_406 {
