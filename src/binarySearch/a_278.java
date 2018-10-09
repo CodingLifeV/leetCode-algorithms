@@ -1,5 +1,8 @@
 package binarySearch;
 
+/**
+ * First Bad Version
+ */
 public class a_278 {
     public int firstBadVersion(int n) {
         int lo = 1, hi = n;
@@ -13,4 +16,6 @@ public class a_278 {
         }
         return lo;
     }
+    //随便定义isBadVersion()
+    private static boolean isBadVersion(int n){ return true;}
 }
