@@ -1,0 +1,85 @@
+动态规划算法的核心就是记住已经解决过的子问题的解
+
+动态规划算法的两种形式
+求解的方式有两种：①自顶向下的备忘录法 ②自底向上
+
+举一个最简单的例子：求斐波拉契数列Fibonacci
+Fibonacci (n) = 1;   n = 0
+Fibonacci (n) = 1;   n = 1
+Fibonacci (n) = Fibonacci(n-1) + Fibonacci(n-2)
+
+先使用递归版本来实现这个算法：
+public int fib(int n)
+{
+    if(n<=0)
+        return 0;
+    if(n==1)
+        return 1;
+    return fib( n-1)+fib(n-2);
+}
+//输入6
+//输出：8
+上面的递归树中的每一个子节点都会执行一次，很多重复的节点被执行，fib(2)被重复执行了5次。
+由于调用每一个函数的时候都要保留上下文，所以空间上开销也不小。这么多的子节点被重复执行，
+如果在执行的时候把执行过的子节点保存起来，后面要用到的时候直接查表调用的话可以节约大量的时间。
+
+①自顶向下的备忘录法
+public static int Fibonacci(int n)
+{
+        if(n<=0)
+            return n;
+        int []Memo=new int[n+1];
+        for(int i=0;i<=n;i++)
+            Memo[i]=-1;
+        return fib(n, Memo);
+    }
+    public static int fib(int n,int []Memo)
+    {
+
+        if(Memo[n]!=-1)
+            return Memo[n];
+    //如果已经求出了fib（n）的值直接返回，否则将求出的值保存在Memo备忘录中。
+        if(n<=2)
+            Memo[n]=1;
+
+        else Memo[n]=fib( n-1,Memo)+fib(n-2,Memo);
+
+        return Memo[n];
+    }
+---------------------
+②自底向上的动态规划
+备忘录法还是利用了递归，上面算法不管怎样，计算fib（6）的时候最后还是要计算出fib（1），
+fib（2），fib（3）……,那么何不先计算出fib（1），fib（2），fib（3）……,呢？这也就
+是动态规划的核心，先计算子问题，再由子问题计算父问题
+public static int fib(int n)
+{
+        if(n<=0)
+            return n;
+        int []Memo=new int[n+1];
+        Memo[0]=0;
+        Memo[1]=1;
+        for(int i=2;i<=n;i++)
+        {
+            Memo[i]=Memo[i-1]+Memo[i-2];
+        }
+        return Memo[n];
+}
+---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
