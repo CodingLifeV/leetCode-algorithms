@@ -31,7 +31,7 @@ public class Test {
         Arrays.sort(matrix, new Comparator<Integer[]>() {
             @Override
             public int compare(Integer[] x, Integer[] y) {
-                //x[0]按照第二列,x[1]按照第二列
+                //x[0]按照第一列,x[1]按照第二列
                if (x[0] == y[0]) {
                    return x[1] - y[1];
                } else {
