@@ -15,6 +15,18 @@ public class Test02 {
         System.out.println(str.substring(1));
         System.out.println(str.substring(4,7));
 
+        /*
+        StringBuilder reverse()方法对数据进行反转
+         */
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            sb.append(i);
+        }
+        sb.reverse(); //逆序
+        System.out.println(sb.toString());
+
+        int a = '1'-'0';//字符相减，成int型
+        System.out.println(a);
     }
 
 }
