@@ -37,17 +37,17 @@ public class a_215 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-}
-
-class StackClass {
-    public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
-        for(int val : nums) {
-            queue.add(val);
-            if (queue.size() > k) {//维护堆的大小为k
-                queue.poll();//每次弹出删除堆中最小元素,最后只剩k个元素
+    class StackClass {
+        public int findKthLargest(int[] nums, int k) {
+            PriorityQueue<Integer> queue = new PriorityQueue<>();
+            for(int val : nums) {
+                queue.add(val);
+                if (queue.size() > k) {//维护堆的大小为k
+                    queue.poll();//每次弹出删除堆中最小元素,最后只剩k个元素
+                }
             }
+            return queue.peek();
         }
-        return queue.peek();
     }
 }
+
