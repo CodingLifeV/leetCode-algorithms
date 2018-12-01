@@ -1,0 +1,20 @@
+(1)前序：根左右
+ void dfs(TreeNode root) {
+     visit(root);
+     dfs(root.left);
+     dfs(root.right);
+ }
+
+(2)中序：左根右
+void dfs(TreeNode root) {
+    dfs(root.left);
+    visit(root);
+    dfs(root.right);
+}
+
+(3)后序：左右根
+void dfs(TreeNode root) {
+    dfs(root.left);
+    dfs(root.right);
+    visit(root);
+}

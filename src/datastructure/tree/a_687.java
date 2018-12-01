@@ -1,7 +1,7 @@
 package datastructure.tree;
 
 /**
- *
+ * 相同节点值的最大路径长度, 最长同值路径
  */
 public class a_687 {
     private int path;
